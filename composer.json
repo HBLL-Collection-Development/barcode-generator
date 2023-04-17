@@ -1,0 +1,23 @@
+{
+  "name": "jaredhowland/barcode-generator",
+  "description": "PHP library to generate shelf barcodes for the BYU library's auxiliary storage",
+  "keywords": ["barcode","byu","hbll"],
+  "homepage": "https://github.com/HBLL-Collection-Development/barcode-generator",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Barcode\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Jared Howland",
+      "homepage": "https://www.jaredhowland.com",
+      "role": "developer"
+    }
+  ],
+  "require": {
+    "php": "^8",
+    "tecnickcom/tcpdf": "^6.6"
+  }
+}
