@@ -3,8 +3,8 @@ use Barcode\Barcode;
 
 require_once __DIR__.'/vendor/autoload.php';
 
-$barcode = $_GET['barcode'];
-$type = $_GET['type'];
+$barcode = htmlentities($_GET['barcode']);
+$type = htmlentities($_GET['type']);
 
 // set Barcode39 object
 $bc = new Barcode($barcode);
