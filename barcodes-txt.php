@@ -1,16 +1,16 @@
 <?php
 header('Content-Type: text/plain');
 
-$type = $_GET['type'];
+$type = htmlentities($_GET['type']);
 if ($type == 'books') {
-    $start_bay = $_GET['start_bay'];
-    $end_bay = $_GET['end_bay'];
-    $start_range = $_GET['start_range'];
-    $end_range = $_GET['end_range'];
-    $start_section = $_GET['start_section'];
-    $end_section = $_GET['end_section'];
-    $start_shelf = $_GET['start_shelf'];
-    $end_shelf = $_GET['end_shelf'];
+    $start_bay = htmlentities($_GET['start_bay']);
+    $end_bay = htmlentities($_GET['end_bay']);
+    $start_range = htmlentities($_GET['start_range']);
+    $end_range = htmlentities($_GET['end_range']);
+    $start_section = htmlentities($_GET['start_section']);
+    $end_section = htmlentities($_GET['end_section']);
+    $start_shelf = htmlentities($_GET['start_shelf']);
+    $end_shelf = htmlentities($_GET['end_shelf']);
     $first_barcode = get_barcodes(array($start_bay), array($start_range), array($start_section), array($start_shelf));
     $last_barcode = get_barcodes(array($end_bay), array($end_range), array($end_section), array($end_shelf));
     $filename = $first_barcode[0] . '-' . $last_barcode[0];
@@ -23,12 +23,12 @@ if ($type == 'books') {
     $barcodes = get_barcodes($bays, $ranges, $sections, $shelves);
     show_barcodes($barcodes, 'books');
 } elseif ($type == 'cassettes') {
-    $start_cabinet = $_GET['start_cabinet'];
-    $end_cabinet = $_GET['end_cabinet'];
-    $start_drawer = $_GET['start_drawer'];
-    $end_drawer = $_GET['end_drawer'];
-    $start_column = $_GET['start_column'];
-    $end_column = $_GET['end_column'];
+    $start_cabinet = htmlentities($_GET['start_cabinet']);
+    $end_cabinet = htmlentities($_GET['end_cabinet']);
+    $start_drawer = htmlentities($_GET['start_drawer']);
+    $end_drawer = htmlentities($_GET['end_drawer']);
+    $start_column = htmlentities($_GET['start_column']);
+    $end_column = htmlentities($_GET['end_column']);
     $first_barcode = get_cassettes(array($start_cabinet), array($start_drawer), array($start_column));
     $last_barcode = get_cassettes(array($end_cabinet), array($end_drawer), array($end_column));
     $filename = $first_barcode[0] . '-' . $last_barcode[0];
