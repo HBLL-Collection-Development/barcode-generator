@@ -7,8 +7,9 @@ $template = new Template();
 
 $template->tm('header', 'Barcode Generator');
 
-echo '<p><a href="barcodes-txt.php?'.$_SERVER['QUERY_STRING'].'">Download plain text file to send to LIT for creation of pseudo-patrons</a></p>';
-echo '<p><a href="barcodes.php?'.$_SERVER['QUERY_STRING'].'">Download PDF file of barcodes</a></p>';
+$queryString = htmlspecialchars($_SERVER['QUERY_STRING'], ENT_QUOTES);
+echo '<p><a href="barcodes-txt.php?'.$queryString.'">Download plain text file to send to LIT for creation of pseudo-patrons</a></p>';
+echo '<p><a href="barcodes.php?'.$queryString.'">Download PDF file of barcodes</a></p>';
 
 $template->tm('footer');
 ?>
